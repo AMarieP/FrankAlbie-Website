@@ -18,44 +18,42 @@ export default {
       },
     },
     {
-      title: 'Default variant',
-      name: 'defaultProductVariant',
-      type: 'productVariant',
+      title: 'Price',
+      name: 'price',
+      type: 'number',
     },
     {
-      title: 'Variants',
-      name: 'variants',
+      title: 'SKU',
+      name: 'sku',
+      type: 'string',
+    },
+    {
+      title: 'In Stock',
+      name: 'inStock',
+      type: 'boolean',
+    },
+    {
+      title: 'Stock Amount',
+      name: 'stockAmount',
+      type: 'number',
+    },
+    {
+      name: 'images',
+      title: 'Images',
       type: 'array',
       of: [
         {
-          title: 'Variant',
-          type: 'productVariant',
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
         },
       ],
-    },
-    {
-      title: 'Tags',
-      name: 'tags',
-      type: 'array',
-      of: [
-        {
-          type: 'string',
-        },
-      ],
-      options: {
-        layout: 'tags',
-      },
-    },
-    {
-      name: 'vendor',
-      title: 'Vendor',
-      type: 'reference',
-      to: {type: 'vendor'},
     },
     {
       name: 'blurb',
       title: 'Blurb',
-      type: 'localeString',
+      type: 'string',
     },
     {
       name: 'categories',
@@ -69,17 +67,22 @@ export default {
       ],
     },
     {
-      name: 'body',
-      title: 'Body',
-      type: 'localeBlockContent',
+      name: 'description',
+      title: 'Description',
+      type: 'blockContent',
+    },
+    {
+      name: 'productDetails',
+      title: 'Product Details',
+      type: 'blockContent',
     },
   ],
 
   preview: {
     select: {
       title: 'title',
-      manufactor: 'manufactor.title',
-      media: 'defaultProductVariant.images[0]',
+      price: 'price',
+      media: 'images[0]',
     },
   },
 }
