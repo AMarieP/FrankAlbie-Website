@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import sanityClient from "./client";
 
+
+
 function IndividualProduct(){
 
     const[productData, setProductData] = useState(null); //productdata state is null
@@ -12,7 +14,7 @@ function IndividualProduct(){
         sanityClient
         .fetch(
             `*[_type == 'product' && slug.current == "${slug}"]{
-                title, slug, price, images,
+                title, slug, price, SKU, images,
                 "imageUrl": images[0].asset->url
             }`
         )
@@ -26,6 +28,7 @@ function IndividualProduct(){
         <>
             <h1>{productData.title}</h1>
             <p>How Exciting</p>
+            {/* currently just one item will be added  */}
 
         </>
     )

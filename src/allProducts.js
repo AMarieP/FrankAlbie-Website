@@ -23,6 +23,11 @@ function AllProducts(){
         <h1>All Products Page</h1>
         <p>all of the products should display here</p>
         <div>
+            <Link to={'/cart'}>
+                Go To Cart
+            </Link>
+        </div>
+        <div>
             {allProductsData &&
             allProductsData.map((product, index) => (
             <Link to={'/' + product.slug.current} key={product.slug.current}>
