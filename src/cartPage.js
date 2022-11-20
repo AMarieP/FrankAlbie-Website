@@ -10,6 +10,7 @@ function CartPage({setContents}){
         <>
         <h1>Your Shopping Cart</h1>
         <ul>
+            {/* {cart here} */}
         </ul>
 
         <div>
