@@ -1,12 +1,17 @@
 export default{
     name: 'content',
-    title: 'Content',
+    title: 'Site Content',
     type: 'document',
     fields: [
         {
-            name: 'copy',
-            title: 'Copy',
+            name: 'title',
+            title: 'Title',
             type: 'string'
+        },
+        {
+          name: 'paragraph',
+          title: 'Paragraph',
+          type: 'blockContent',
         },
         {
             name: 'categories',
