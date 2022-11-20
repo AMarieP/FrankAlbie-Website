@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import sanityClient from "./client";
 import { PortableText } from '@portabletext/react'
 
+//TO DO: Make query get relevant images and display xx
 
 function AboutPage(){
 
