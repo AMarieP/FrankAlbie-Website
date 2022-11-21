@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {Link} from 'react-router-dom'
-import sanityClient from "./client";
+import sanityClient from "../client";
 
 function AllProducts(){
 
@@ -9,7 +9,7 @@ function AllProducts(){
         sanityClient
         .fetch(
             `*[_type == "product"]{
-                title, slug, price, images,
+                _id, title, slug, price, images,
                 "imageUrl": images[0].asset->url
                 
             }`

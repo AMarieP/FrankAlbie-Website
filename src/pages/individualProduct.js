@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import sanityClient from "./client";
+import sanityClient from "../client";
 
 
 
@@ -14,7 +14,7 @@ function IndividualProduct(){
         sanityClient
         .fetch(
             `*[_type == 'product' && slug.current == "${slug}"]{
-                title, slug, price, SKU, images,
+                _id, title, slug, price, SKU, images,
                 "imageUrl": images[0].asset->url
             }`
         )

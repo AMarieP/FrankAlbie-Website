@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AllProducts from "./allProducts";
-import IndividualProduct from './individualProduct';
-import CartPage from "./cartPage";
-import AboutPage from "./aboutPage";
+import AllProducts from "./pages/allProducts";
+import IndividualProduct from './pages/individualProduct';
+import CartPage from "./pages/cartPage";
+import AboutPage from "./pages/aboutPage";
 
 
 
