@@ -6,9 +6,6 @@ import CartPage from "./pages/cartPage";
 import AboutPage from "./pages/aboutPage";
 
 
-
-
-
 function App(){
   return(
     <BrowserRouter>

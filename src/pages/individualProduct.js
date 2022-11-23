@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import sanityClient from "../client";
-
-
+import { ActiveProductContext } from "../context/activeProduct/activeProductContext"
 
 function IndividualProduct(){
 
-    const[productData, setProductData] = useState(null); //productdata state is null
+    const[productData, setProductData] = useState(ActiveProductContext); //productdata state is null
     const { slug } = useParams();//makes sure we get the product with the slug we have clicked to!
 
     console.log(slug);
@@ -23,12 +22,13 @@ function IndividualProduct(){
     }, [slug]);
 
     if (!productData) return <div>Loading...</div>; //if productData is not there return a loading screen 
+    // if (productData.slug.current != slug) return <div>Loading...</div>;
 
     return(
         <>
             <h1>{productData.title}</h1>
             <p>How Exciting</p>
-            {/* currently just one item will be added  */}
+            {}
 
         </>
     )
