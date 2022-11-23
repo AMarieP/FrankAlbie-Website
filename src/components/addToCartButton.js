@@ -1,23 +1,20 @@
 import { CartContext } from "../context/cart/cartContext";
 import { ActiveProductContext } from "../context/activeProduct/activeProductContext";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
-const cartContents = CartContext;
-
-export default function AddToCart(product){
-
-    cartContents = [
-        cartContents,
-        {
-            id: product._id,
-            prodName: product.title,
-            prodQuant: product.quantitiy,
-            cartQuant: 1,
-            prodPrice: product.price,
-        }
-    ];
+function AddToCartButton(){
+    const [cartContents, setCart] = useState(CartContext);
+    const {currentProduct} = useContext(ActiveProductContext);
+    console.log(cartContents);
+    function addToCart(product){
+        setCart(
+            cartContents + product
+        )
+    };
 
     return(
-        <button>Add To Cart</button>
+        <button onClick={() => addToCart(currentProduct)} >Add To Cart</button>
     )
-};
+}
+
+export default AddToCartButton;

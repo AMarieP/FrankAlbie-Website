@@ -5,9 +5,18 @@ import IndividualProduct from './pages/individualProduct';
 import CartPage from "./pages/cartPage";
 import AboutPage from "./pages/aboutPage";
 
+import { CartContext } from './context/cart/cartContext';
+import { ActiveProductContext } from './context/activeProduct/activeProductContext';
+import Cart from './context/cart/cart';
+
 
 function App(){
+  const [cartContents, setCart] = useState(CartContext);
+  const [currentProduct, setCurrentProduct] = useState(ActiveProductContext);
+
   return(
+    <ActiveProductContext.Provider value={{currentProduct, setCurrentProduct}}>
+    <CartContext.Provider value={{cartContents, setCart}}>
     <BrowserRouter>
     <Routes>
         <Route element={<AllProducts/>} path="/" exact />
@@ -16,6 +25,8 @@ function App(){
         <Route element={<AboutPage/>} path="/about" />
     </Routes>
     </BrowserRouter>
+    </CartContext.Provider>
+    </ActiveProductContext.Provider>
   );
 
 };

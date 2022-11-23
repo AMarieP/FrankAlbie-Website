@@ -3,19 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { CartContext } from './context/cart/cartContext';
-import { ActiveProductContext } from './context/activeProduct/activeProductContext';
-import Cart from './context/cart/cart';
-import IndividualProduct from './pages/individualProduct';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ActiveProductContext.Provider value={IndividualProduct}>
-    <CartContext.Provider value={Cart}>
       <App />
-    </CartContext.Provider>
-    </ActiveProductContext.Provider>
   </React.StrictMode>
 );
 

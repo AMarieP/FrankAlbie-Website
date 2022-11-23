@@ -45,8 +45,12 @@ export default function Cart(){
 
     return(
         <>
-            <h1>Hello Cart</h1>
-            <p>{cartContents._id}</p>
+            {cartContents && cartContents.map((product, index) => (
+                <div key={index}>
+                    <p>{product.name}</p>
+                    <p>{product.price}</p>
+                </div>
+            ))}
         </>
     )
 }

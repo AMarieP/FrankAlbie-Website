@@ -6,8 +6,6 @@ function AboutPage(){
 
     const[aboutContent, setAboutContent] = useState(null);
 
-
-
     useEffect(()=>{
         sanityClient
         .fetch(
