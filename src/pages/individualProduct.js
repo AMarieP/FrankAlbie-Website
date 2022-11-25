@@ -4,6 +4,9 @@ import sanityClient from "../client";
 import { ActiveProductContext } from "../context/activeProduct/activeProductContext";
 import AddToCartButton from "../components/addToCartButton"
 
+import {Link} from 'react-router-dom'
+
+
 function IndividualProduct(){
 
     const { slug } = useParams();//makes sure we get the product with the slug we have clicked to!
@@ -24,12 +27,14 @@ function IndividualProduct(){
 
     if (!currentProduct) return <div>Loading...</div>; //if productData is not there return a loading screen 
 
+
     return(
         <>
             <h1>{currentProduct.title}</h1>
             <p>How Exciting</p>
             {<AddToCartButton/>}
-            <p>hehhe{ActiveProductContext.call}</p>
+            <Link to={"/cart"}><button>Go To Cart</button>
+</Link>
         </>
     )
 }

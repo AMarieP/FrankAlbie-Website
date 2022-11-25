@@ -11,7 +11,7 @@ import Cart from './context/cart/cart';
 
 
 function App(){
-  const [cartContents, setCart] = useState(CartContext);
+  const [cartContents, setCart] = useState([CartContext]);
   const [currentProduct, setCurrentProduct] = useState(ActiveProductContext);
 
   return(

@@ -3,14 +3,15 @@ import { ActiveProductContext } from "../context/activeProduct/activeProductCont
 import React, { useContext, useState } from "react";
 
 function AddToCartButton(){
-    const [cartContents, setCart] = useState(CartContext);
+    const {cartContents, setCart} = useContext(CartContext);
     const {currentProduct} = useContext(ActiveProductContext);
     function addToCart(product){
-        setCart(
-            cartContents + product,
+        let b = cartContents.push(product);
+        console.log(cartContents);
 
-        )
     };
+
+
 
     return(
         <button onClick={() => addToCart(currentProduct)} >Add To Cart</button>
