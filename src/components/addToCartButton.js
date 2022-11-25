@@ -8,12 +8,35 @@ function AddToCartButton(){
     const {cartContents, setCart} = useContext(CartContext);
     const {currentProduct} = useContext(ActiveProductContext);
 
+    function addQuantityValue(prod){
+        prod.quantity = 1
+    }
+
+    function checkIfProductExists(product){
+        for(let i = 0; i < cartContents.length; i++){
+            if(cartContents[i] === product){
+                return true
+            }
+        }
+        return false;
+    }
+
     function addToCart(product){
-        let b = cartContents.push(product)
-        console.log(cartContents)
+        let exists = checkIfProductExists(product);
+        console.log("exists " + exists)
+
+        if(exists === true){
+            product.quantity++
+            console.log(product.quantity + "prod quant" + " Cart: " + cartContents)
+        }else if(exists === false){
+            addQuantityValue(product);
+            console.log("Cart: " + cartContents + "Product: " + product.title)
+            let b = cartContents.push(product)
+        }
 
     };
 
+    // let b = cartContents.push(product)
 
 
     return(

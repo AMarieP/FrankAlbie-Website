@@ -14,16 +14,16 @@ export default function Cart(){
 
 
     //Total of cart
-    let total = cartCostTotal();
     function cartCostTotal(){
         let t = 0;
         cartContents.map((product) =>{
             t += product.price
-            console.log(total)
             return t
         })
         return t
     }
+    let total = cartCostTotal();
+
 
 
     //filters all contents except for the product id that is passed to delete a product from the cart arr.

@@ -8,6 +8,7 @@ import AboutPage from "./pages/aboutPage";
 import { CartContext } from './context/cart/cartContext';
 import { ActiveProductContext } from './context/activeProduct/activeProductContext';
 import Cart from './context/cart/cart';
+import AddToCartButton from "./components/addToCartButton";
 
 
 function App(){
