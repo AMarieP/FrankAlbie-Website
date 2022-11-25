@@ -5,10 +5,10 @@ import React, { useContext, useState } from "react";
 function AddToCartButton(){
     const [cartContents, setCart] = useState(CartContext);
     const {currentProduct} = useContext(ActiveProductContext);
-    console.log(cartContents);
     function addToCart(product){
         setCart(
-            cartContents + product
+            cartContents + product,
+
         )
     };
 
