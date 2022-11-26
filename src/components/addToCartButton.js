@@ -10,16 +10,16 @@ function AddToCartButton(){
 
     function addQuantityValue(prod){
         prod.quantity = 1
-    }
+    };
 
     function checkIfProductExists(product){
         for(let i = 0; i < cartContents.length; i++){
-            if(cartContents[i] === product){
+            if(cartContents[i]._id === product._id){
                 return true
             }
         }
         return false;
-    }
+    };
 
     function addToCart(product){
         let exists = checkIfProductExists(product);
@@ -27,9 +27,10 @@ function AddToCartButton(){
 
         if(exists === true){
             product.quantity++
-            console.log(product.quantity + "prod quant" + " Cart: " + cartContents)
+            console.log(cartContents)
         }else if(exists === false){
             addQuantityValue(product);
+            console.log(cartContents)
             console.log("Cart: " + cartContents + "Product: " + product.title)
             let b = cartContents.push(product)
         }

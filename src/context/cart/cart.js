@@ -8,8 +8,7 @@ import { Link } from 'react-router-dom'
 
 export default function Cart(){
     const {cartContents, setCart} = useContext(CartContext);
-    //gets rid of first value defualts in context
-    const firstVal = cartContents.shift();
+ 
 
 
 
@@ -33,12 +32,15 @@ export default function Cart(){
             )
     };
 
-    function incrementProduct(productId, cartQuant, prodQuant){
-        if(prodQuant > cartQuant){
-            cartQuant = cartQuant + 1;
-        }else if(prodQuant <= cartQuant){
-            cartQuant = cartQuant
+
+    function incrementProduct(product, index){
+        if(product.stockAmount > product.quantity){
+            setCart(
+                cartContents[index].quantity
+            )
+            console.log(product.quantity)
         }
+
     };
 
 
@@ -57,13 +59,16 @@ export default function Cart(){
         {cartContents &&
             cartContents.map((product, index) => (<>
             <Link to={'/' + product.slug.current} key={index}>
-                <span key={index}>
+                <span key={index * product.price}>
                     <h2>{product.title}</h2>
                     <p>{product.price}</p>
                     <img src={product.imageUrl} />
                 </span>
             </Link> 
             <button onClick={() => removeFromCart(product.id)}>Remove</button>
+            <button onClick={() => incrementProduct(product, index)} >+</button>                    
+            <p>{product.quantity}</p>
+            <button>-</button>
 </>
             ))}
             <p>Total: {total}</p>

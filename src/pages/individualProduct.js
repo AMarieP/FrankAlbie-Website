@@ -17,7 +17,7 @@ function IndividualProduct(){
         sanityClient
         .fetch(
             `*[_type == 'product' && slug.current == "${slug}"]{
-                _id, title, slug, price, SKU, images,
+                _id, title, slug, price, SKU, images, stockAmount,
                 "imageUrl": images[0].asset->url
             }`
         )

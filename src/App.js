@@ -15,6 +15,9 @@ function App(){
   const [cartContents, setCart] = useState([CartContext]);
   const [currentProduct, setCurrentProduct] = useState(ActiveProductContext);
 
+     //gets rid of first value defualts in context
+    const firstVal = cartContents.shift();
+
   return(
     <ActiveProductContext.Provider value={{currentProduct, setCurrentProduct}}>
     <CartContext.Provider value={{cartContents, setCart}}>
