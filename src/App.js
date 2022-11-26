@@ -21,6 +21,7 @@ function App(){
         <Route element={<IndividualProduct/>} path="/:slug" />
         <Route element={<CartPage/>} path="/cart" />
         <Route element={<AboutPage/>} path="/about" />
+        <Route element={<PrivacyPolicy/>} path="/privacy" />
     </Routes>
     </BrowserRouter>
     </ActiveProductContext.Provider>

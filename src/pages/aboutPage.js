@@ -9,23 +9,29 @@ function AboutPage(){
     useEffect(()=>{
         sanityClient
         .fetch(
-            `*[_type == 'content' && title == "About Me Page"]{
+            `*[_type == 'content' && title == "aboutme"]{
                 title, paragraph
             }`
         )
-        .then((data) => setAboutContent(data))
+        .then((data) => setAboutContent(data[0]))
         .catch(console.error);
     },);
+
+    if (!aboutContent) return <div>Loading...</div>; //if data is not loaded return a loading screen
 
     return(
         <>
         <h1>{aboutContent.title}</h1>
         <p>Text for about page</p>
         <img src="#"/>
-        <p>wanna c more</p>
+        <p>
+            <PortableText 
+            value={aboutContent.paragraph}
+            />
+        </p>
         </>
 
-    )
+    );
 }
 
 export default AboutPage;
