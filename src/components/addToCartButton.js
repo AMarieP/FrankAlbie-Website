@@ -5,7 +5,7 @@ import React, { useContext, useState } from "react";
 //Check if in arr already, if in arr increment quantity instead of products
 
 function AddToCartButton(){
-    const {cartContents, setCart} = useContext(CartContext);
+    const [cartContents, setCart] = useContext(CartContext);
     const {currentProduct} = useContext(ActiveProductContext);
 
     function addQuantityValue(prod){
@@ -30,15 +30,11 @@ function AddToCartButton(){
             console.log(cartContents)
         }else if(exists === false){
             addQuantityValue(product);
-            console.log(cartContents)
             console.log("Cart: " + cartContents + "Product: " + product.title)
             let b = cartContents.push(product)
         }
 
     };
-
-    // let b = cartContents.push(product)
-
 
     return(
         <button onClick={() => addToCart(currentProduct)} >Add To Cart</button>

@@ -1,16 +1,13 @@
 import { CartContext } from "./cartContext";
-import { ActiveProductContext } from "../activeProduct/activeProductContext";
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Link } from 'react-router-dom'
 
 
 
 
 export default function Cart(){
-    const {cartContents, setCart} = useContext(CartContext);
- 
-
-
+    const [cartContents, setCart] = useContext(CartContext);
+    console.log(localStorage.getItem('cartContents'))
 
     //Total of cart
     function cartCostTotal(){
@@ -32,13 +29,20 @@ export default function Cart(){
             )
     };
 
-
+//Increments or decrements product
     function incrementProduct(product, index){
         if(product.stockAmount > product.quantity){
-            setCart(
-                cartContents[index].quantity
-            )
-            console.log(product.quantity)
+            cartContents[index].quantity++
+            console.log(cartContents[index].quantity)
+        }
+
+    };
+
+    function decrementProduct(product, index){
+        if(product.quantity > 1){
+            cartContents[index].quantity--
+        }else{
+            removeFromCart(product.id)
         }
 
     };
@@ -57,21 +61,22 @@ export default function Cart(){
     return(
         <>
         {cartContents &&
-            cartContents.map((product, index) => (<>
-            <Link to={'/' + product.slug.current} key={index}>
-                <span key={index * product.price}>
-                    <h2>{product.title}</h2>
-                    <p>{product.price}</p>
-                    <img src={product.imageUrl} />
-                </span>
-            </Link> 
-            <button onClick={() => removeFromCart(product.id)}>Remove</button>
-            <button onClick={() => incrementProduct(product, index)} >+</button>                    
-            <p>{product.quantity}</p>
-            <button>-</button>
-</>
-            ))}
-            <p>Total: {total}</p>
+    cartContents.map((product, index) => (<>
+    <Link to={'/' + product.slug.current} key={index}>
+        <span key={index * product.price}>
+            <h2>{product.title}</h2>
+            <p>{product.price}</p>
+            <img src={product.imageUrl} />
+        </span>
+    </Link> 
+    <button onClick={() => removeFromCart(product.id)}>Remove</button>
+    <button onClick={() => incrementProduct(product, index)} >+</button>                    
+    <p>{product.quantity}</p>
+    <button onClick={() => decrementProduct(product, index)} >-</button>
+    </>
+    ))}
+    <p>Total: {total}</p>
+
         </>
     )
 }
