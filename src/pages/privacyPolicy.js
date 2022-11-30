@@ -23,11 +23,10 @@ function PrivacyPolicy(){
 
     return(
         <>
-        <h1>{privacyPolicy.title}</h1>
-
-            <PortableText 
-            value={privacyPolicy.paragraph}
-            />
+        <div className="container">
+            <h1>{privacyPolicy.title}</h1>
+            <PortableText value={privacyPolicy.paragraph}/>
+        </div>
         </>
 
     );

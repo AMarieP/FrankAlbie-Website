@@ -13,8 +13,8 @@ import Footer from "./components/footer";
 import { CartProvider } from './context/cart/cartContext';
 import { ActiveProductContext } from './context/activeProduct/activeProductContext';
 
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap/dist/js/bootstrap.bundle'
+// import 'bootstrap/dist/css/bootstrap.css'
+// import 'bootstrap/dist/js/bootstrap.bundle'
 import './stylesheets/main.css'
 
 

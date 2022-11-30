@@ -5,11 +5,13 @@
     align-items: center;
     text-transform: uppercase;
     width: 100vw;
+    overflow: scroll;
 }
 
 #products{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    overflow: scroll;
 }
 
 .productListing{

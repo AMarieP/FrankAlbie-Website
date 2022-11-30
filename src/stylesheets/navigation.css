@@ -76,9 +76,9 @@
     justify-items: center;
     align-items: start;
     justify-content: center;   
+    position: fixed;
     padding: 0;
     margin: 0;
-    position: fixed;
     z-index: 1;
 }
 
@@ -95,7 +95,6 @@
     grid-column: 1 / span 1;
     grid-row: 2 / span 1;
     width: 12vw;
-    height: auto;
 }
 
 #devNavAbout{
@@ -151,8 +150,10 @@ svg:active path {
 
     #devicesNav{
         display: grid;
+        position: fixed;
         top: 0;
-        width: max-content;
+        left: 0;
+        right: 0;
     }
     
 }
@@ -169,7 +170,6 @@ svg:active path {
         bottom: 0;
         grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
         grid-template-rows: 1fr 0.2fr 1fr 1fr;
-        overflow-x: hidden;
  
     }
     #backgroundNav{

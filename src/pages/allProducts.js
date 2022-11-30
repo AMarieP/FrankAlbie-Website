@@ -22,27 +22,29 @@ function AllProducts(){
 
     return(
         <>
-        <div id="productListingPage" >
-        <h1>Shop Frank Albie</h1>
-            <div id="products">
-                {allProductsData &&
-                    allProductsData.map((product, index) => (
-                    <Link to={'/' + product.slug.current} key={product.slug.current}>
-                        <span key={index}>
-                        <div className="productListing">
-                            <div className="productListingDetails">
-                                <h2 className="productListingTitle">{product.title}</h2>
-                                <p className="productListingPrice">${product.price}</p>
+        <div className="container" >
+            <div id="productListingPage" >
+                <h1>Shop Frank Albie</h1>
+                    <div id="products">
+                        {allProductsData &&
+                            allProductsData.map((product, index) => (
+                            <Link to={'/' + product.slug.current} key={product.slug.current}>
+                                <span key={index}>
+                                <div className="productListing">
+                                    <div className="productListingDetails">
+                                        <h2 className="productListingTitle">{product.title}</h2>
+                                        <p className="productListingPrice">${product.price}</p>
+                                    </div>
+                                    <div className="productListingImage">
+                                        <img src={product.imageUrl} alt={product.title} />
+                                </div>
                             </div>
-                            <div className="productListingImage">
-                                <img src={product.imageUrl} alt={product.title} />
-                            </div>
-                        </div>
-                        </span>
-                    </Link> 
-                    ))};
-            </div>
-        </div>        
+                            </span>
+                        </Link> 
+                        ))};
+                    </div>
+            </div>      
+        </div>  
         </>
     )
 };

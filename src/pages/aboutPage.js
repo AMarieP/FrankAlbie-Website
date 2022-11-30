@@ -24,17 +24,19 @@ function AboutPage(){
 
     return(
         <>
-        <div id="aboutPage">
-        <h1 id="aboutHeading" >{aboutContent.title}</h1>
-        <p id="aboutContent" >
-            <PortableText value={aboutContent.paragraph}/>
-            </p>
-        <img id="portrait" src="{../images/my about photo eek.JPG}"/>
-        <img className="circle" id="halCircle" src="../images/"/>
-        <img className="circle" id="spinCircle" src="../Components/assets/spindrift.jpg"/>
-        <div id="boxKhaki"></div>
-        <p id="linkToSeeMore">wanna see more? <a href="#" className="shopLink">SHOP</a> here or <a href="#" className="contactLink">CONTACT US</a></p>
-    </div>
+        <div className="container">
+            <div id="aboutPage">
+                <h1 id="aboutHeading" >{aboutContent.title}</h1>
+                <p id="aboutContent" >
+                    <PortableText value={aboutContent.paragraph}/>
+                    </p>
+                <img id="portrait" src="{../images/my about photo eek.JPG}"/>
+                <img className="circle" id="halCircle" src="../images/"/>
+                <img className="circle" id="spinCircle" src="../Components/assets/spindrift.jpg"/>
+                <div id="boxKhaki"></div>
+                <p id="linkToSeeMore">wanna see more? <a href="#" className="shopLink">SHOP</a> here or <a href="#" className="contactLink">CONTACT US</a></p>
+            </div>
+        </div>
         </>
 
     );

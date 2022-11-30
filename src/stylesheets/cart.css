@@ -1,3 +1,8 @@
+#cartHeading{
+    margin-left: 5rem;
+    font-family: 'Abril Fatface', cursive;
+}
+
 #cartList{
     margin: auto;
     padding: 0%;
@@ -59,4 +64,15 @@
     float: right;
     margin: 1rem;
     font-size: 1.5rem;
+}
+
+#emptyItemDiv{
+    margin: auto;
+    padding: 20vh 10vw 0vh 0vw;
+}
+
+#emptyPara{
+    font-style: italic;
+    font-size: 2rem;
+    text-align: left;
 }

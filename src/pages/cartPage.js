@@ -5,13 +5,15 @@ import '../stylesheets/cart.css'
 
 //page which displays cart
 
-function CartPage({setContents}){
+function CartPage(){
 
 
     return(
         <>
-        <h1>Your Cart</h1>
-        <Cart />
+        <div className="container">
+            <h1 id="cartHeading">Your Cart</h1>
+            <Cart />
+        </div>
         </>
 
     );

@@ -44,46 +44,49 @@ export default function Cart(){
         }
 
     };
+    
 
+    //cart listings element
+    let cartListings = <>{cartContents &&
+        cartContents.map((product, index) => (<>
+        <Link to={'/' + product.slug.current} key={index}>
+            <span key={index * product.price}>
+                <li className="listing">
+                    <div className="cartListing">
+                        <div className="cartProdDetails">
+                            <div className="cartProdImg">
+                                <img src={product.imageUrl}/>
+                            </div>
+                            <div className="cartProdText">
+                                <h2>{product.title}</h2>
+                                <p>${product.price}</p>
+                            </div>
+                        </div>
+                        <button class="cartButtonDelete">X</button>
+                    </div>
+                    <hr class="cartHr"/>
+                </li>
+            </span>
+        </Link> 
+        </>
+        ))}</>
 
-    let cartListings = "";
-    if(cartContents.length == 0){
-        cartListings = "There are no items in your cart!"
-    } else{
-        for(let i = 1; i < cartContents.length; i++){
-            cartListings += "sjhffhsdkjfh"
-        }
-    }
+    //empty cart element
 
+    let emptyCartMessage = <div id="emptyItemDiv">
+        <p id="emptyPara" >There are no items in your cart!</p>
+    </div>
+    
+
+    //Shows a message saying no cart items if Cart is empty
+    let cartList = cartContents.length == 0 ? emptyCartMessage : cartListings;
     
     return(
         <>
         <ul id="cartList">
             <hr className="cartHr"/>
-                {cartContents &&
-            cartContents.map((product, index) => (<>
-            <Link to={'/' + product.slug.current} key={index}>
-                <span key={index * product.price}>
-                    <li className="listing">
-                        <div className="cartListing">
-                            <div className="cartProdDetails">
-                                <div className="cartProdImg">
-                                    <img src={product.imageUrl}/>
-                                </div>
-                                <div className="cartProdText">
-                                    <h2>{product.title}</h2>
-                                    <p>${product.price}</p>
-                                </div>
-                            </div>
-                            <button class="cartButtonDelete">X</button>
-                        </div>
-                        <hr class="cartHr"/>
-                    </li>
-                </span>
-            </Link> 
-            </>
-            ))}
-            <p id="cartTotal">Total: $$$$</p>
+                {cartList}
+            <p id="cartTotal">Total: ${total}</p>
             <button className="button">Enquire Now</button>
         </ul>
 

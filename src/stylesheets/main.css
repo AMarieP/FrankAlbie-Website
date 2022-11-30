@@ -1,9 +1,17 @@
 body{
     margin: 0%;
     background-color: #FEFADF;
-    overflow-x: hidden;
-    display: flex;
-    flex: 1;
+    width: 100vw;
+    height: fit-content;
+}
+
+#root{
+    position: absolute;
+    width: 100vw;
+    height: max-content;
+}
+.container{
+    margin: 20vh 0 10vh 0;
 }
 
 h1{
