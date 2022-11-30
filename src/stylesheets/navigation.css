@@ -1,0 +1,219 @@
+#desktopNav{
+    width: 100vw;
+    height: 20vh;
+    background-color: #FEFADF;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#cart{
+    margin-left: auto !important;
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    align-items: center;
+
+}
+
+#cartImg{
+    margin: 0 0.5rem 0 0.5rem;
+    height: 2rem;
+}
+
+#desktopNav a{
+    font-family: proxima-nova, sans-serif;
+    font-size: .8rem;
+    text-decoration: none;
+    padding: 1.5rem 1.8rem;
+    margin: 0rem 1rem;
+    color: #354721;
+}
+
+#homepageImage {
+    width: 16vw;
+}
+
+.navShopHoverLink{
+    background-image: url('../images/Asset17@3x.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.navAboutHoverLink{
+    background-image: url('../images/Asset15@3x.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.navAboutHoverLink:hover{
+    color: #FEFADF !important;
+
+}
+
+.navContactHoverLink{
+    background-image: url('../images/Asset16@3x.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.cartHoverLink{
+    background-image: url('../images/Asset17@3x.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+/* Styling for device Navigation */
+
+#devicesNav{
+    width: 100vw;
+    height: 10vh;
+    display: none;
+    grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+    grid-template-rows: 0.2fr 0.5fr 0.5fr;
+    column-gap: 0.5rem;
+    justify-items: center;
+    align-items: start;
+    justify-content: center;   
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    z-index: 1;
+}
+
+#backgroundNav{
+    background-color: #F7DACC;
+    height: 10vh;
+    width: 100vw;
+    grid-column: 1 / span 5;
+    grid-row: 1 / span 2;
+    z-index: -1;
+}
+
+#devNavShop{
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+    width: 12vw;
+    height: auto;
+}
+
+#devNavAbout{
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    width: 12vw;
+
+}
+
+#devNavHome{
+    grid-column: 3 / span 1;
+    grid-row: 2 /span 2;
+    width: 30vw;
+}
+
+#devNavHome img{
+    width: 100%;
+}
+
+#devNavHome:active{
+    filter: opacity(50%);
+}
+
+#devNavContact{
+    grid-column: 4 / span 1;
+    grid-row: 2 / span 1;
+    width: 12vw;
+
+}
+
+#devNavCart{
+    grid-column: 5 / span 1;
+    grid-row: 2 / span 1;
+    width: 12vw;
+
+}
+
+svg{
+    fill: #354721;
+    stroke: #354721;
+}
+svg:active path {
+    fill: #CCC38C;
+    stroke: #CCC38C;
+}
+
+
+/*Mobile */
+@media screen and (max-width: 767px){
+    #desktopNav{
+        display: none;
+    }
+
+    #devicesNav{
+        display: grid;
+        top: 0;
+        width: max-content;
+    }
+    
+}
+
+/*Tablet */
+@media screen and (min-width: 768px) and (max-width: 992px){
+    #desktopNav{
+        display: none;
+    }
+
+    #devicesNav{
+        display: grid;
+        height: 15vh;
+        bottom: 0;
+        grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+        grid-template-rows: 1fr 0.2fr 1fr 1fr;
+        overflow-x: hidden;
+ 
+    }
+    #backgroundNav{
+        background-color: #F7DACC;
+        height: 12vh;
+        width: 100vw;
+        grid-column: 1 / span 5;
+        grid-row: 2 / span 3;
+        z-index: -1;
+    }
+    
+    #devNavShop{
+        grid-column: 1 / span 1;
+        grid-row: 3 / span 1;
+        width: 12vw;
+    }
+    
+    #devNavAbout{
+        grid-column: 2 / span 1;
+        grid-row: 3 / span 1;
+        width: 12vw;
+    
+    }
+    
+    #devNavHome{
+        grid-column: 3 / span 1;
+        grid-row: 1 /span 2;
+        width: 30vw;
+    
+    }
+    
+    #devNavContact{
+        grid-column: 4 / span 1;
+        grid-row: 3 / span 1;
+        width: 12vw;
+    
+    }
+    
+    #devNavCart{
+        grid-column: 5 / span 1;
+        grid-row: 3 / span 1;
+        width: 12vw;
+    
+    }
+
+    
+}

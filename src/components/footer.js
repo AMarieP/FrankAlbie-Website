@@ -1,5 +1,5 @@
-import {Link} from 'react-router-dom'
-//need to link w css & grab images from sanity
+import { Link } from 'react-router-dom'
+import '../stylesheets/footer.css'
 
 export default function Footer(){
 
@@ -7,7 +7,7 @@ export default function Footer(){
         <>
         <footer>
         <div id="logoFooter">
-            <a href="#"><img id="footerLogoImage" src="assets\Asset 5@3x.png" alt="Frank Albie Logo"/></a>
+            <a href="#"><img id="footerLogoImage" src="http://localhost:3000/static/media/Asset5@3x.05d3ea6b653bf316a36f.png" alt="Frank Albie Logo"/></a>
         </div>
 
         <div id="navigationFooter">

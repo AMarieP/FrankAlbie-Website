@@ -1,0 +1,73 @@
+#aboutPage{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr 1fr 1fr 1fr;
+}
+
+#aboutHeading{
+    grid-column: 2 / span 3;
+    grid-row: 1 / span 1;
+    font-family: 'Abril Fatface', cursive;
+}
+
+#aboutContent{
+    grid-column: 3 / span 4;
+    grid-row: 3 / span 6;
+}
+
+.circle{
+    background-color: #555;
+    border-radius: 50%;
+}
+
+#halCircle{
+    object-fit: cover;
+    height: 7rem;
+    width: 7rem;
+    grid-column: 4 / span 2;
+    grid-row: 10 / span 2;
+
+}
+
+#spinCircle{
+    object-fit: cover;
+    height: 5rem;
+    width: 5rem;
+    grid-column: 3 / span 1;
+    grid-row: 12 / span 2;
+}
+
+#portrait{
+  height: 50vh;
+  width: 25vh;
+  background-color: #555;
+  border-radius: 50%;
+  grid-column: 8 / span 2;
+  grid-row: 3 / span 7;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+#boxKhaki{
+    background-color: #CCC38C;
+    width: 100vw;
+    height: 30vh;
+    margin: 0%;
+    padding: 0%;
+    grid-column: 1 / span 10;
+    grid-row: 9 /span 4;
+    z-index: -1;
+}
+
+#linkToSeeMore{
+    font-size: 1rem;
+    grid-column: 6 / span 4;
+    grid-row: 11;
+}
+
+.shopLink{
+    color: #FEFADF;
+}
+
+.contactLink{
+    color: #F7DACC;
+}

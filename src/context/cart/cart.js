@@ -3,8 +3,6 @@ import React, { useContext, useState, useEffect } from "react";
 import { Link } from 'react-router-dom'
 
 
-
-
 export default function Cart(){
     const [cartContents, setCart] = useContext(CartContext);
     console.log(localStorage.getItem('cartContents'))
@@ -60,22 +58,34 @@ export default function Cart(){
     
     return(
         <>
-        {cartContents &&
-    cartContents.map((product, index) => (<>
-    <Link to={'/' + product.slug.current} key={index}>
-        <span key={index * product.price}>
-            <h2>{product.title}</h2>
-            <p>{product.price}</p>
-            <img src={product.imageUrl} />
-        </span>
-    </Link> 
-    <button onClick={() => removeFromCart(product.id)}>Remove</button>
-    <button onClick={() => incrementProduct(product, index)} >+</button>                    
-    <p>{product.quantity}</p>
-    <button onClick={() => decrementProduct(product, index)} >-</button>
-    </>
-    ))}
-    <p>Total: {total}</p>
+        <ul id="cartList">
+            <hr className="cartHr"/>
+                {cartContents &&
+            cartContents.map((product, index) => (<>
+            <Link to={'/' + product.slug.current} key={index}>
+                <span key={index * product.price}>
+                    <li className="listing">
+                        <div className="cartListing">
+                            <div className="cartProdDetails">
+                                <div className="cartProdImg">
+                                    <img src={product.imageUrl}/>
+                                </div>
+                                <div className="cartProdText">
+                                    <h2>{product.title}</h2>
+                                    <p>${product.price}</p>
+                                </div>
+                            </div>
+                            <button class="cartButtonDelete">X</button>
+                        </div>
+                        <hr class="cartHr"/>
+                    </li>
+                </span>
+            </Link> 
+            </>
+            ))}
+            <p id="cartTotal">Total: $$$$</p>
+            <button className="button">Enquire Now</button>
+        </ul>
 
         </>
     )

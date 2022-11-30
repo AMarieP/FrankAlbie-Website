@@ -1,0 +1,60 @@
+#productPage {
+    display: flex;
+    flex-flow: row;
+    max-width: 100vw;
+    max-height: 80vh;
+}
+
+#image{
+    overflow: hidden;
+    flex: 2.3;
+}
+
+#productPageImageCarousel{
+    height: 100%;
+    width: 100%;
+}
+
+/* Overwrite defaukt bootstrap */
+.carousel-control-next{
+    justify-content: flex-end;
+}
+
+.carousel-control-prev{
+    justify-content: flex-start;
+}
+
+#content{
+    flex: 1;
+    margin: 5rem 2rem;
+}
+
+#productName{
+    font-family: proxima-nova, sans-serif;
+}
+
+#productBlurb{
+    font-size: 1rem;
+    font-style: italic;
+}
+
+/* Overwrite default bootstrap CSS for accordian menus */
+.accordion-button {
+    color: #354721;
+    background-color: #FEFADF;
+    padding: .5rem ;
+    margin: 0;
+    
+}
+
+.accordion-button:not(.collapsed) {
+    color: #354721;
+    background-color: #FEFADF;
+}
+
+.accordion-body{
+    color: #354721;
+    background-color: #FEFADF;
+    padding: 0.5rem 0.2rem;
+    margin: 0;
+}

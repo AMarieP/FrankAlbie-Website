@@ -1,0 +1,51 @@
+body{
+    margin: 0%;
+    background-color: #FEFADF;
+    overflow-x: hidden;
+    display: flex;
+    flex: 1;
+}
+
+h1{
+    font-family: proxima-nova, sans-serif;
+    font-weight: normal;
+}
+
+h2{
+    font-family: proxima-nova, sans-serif;
+    font-weight: normal;
+
+}
+
+p{
+    font-family: proxima-nova, sans-serif;
+    color: #354721;
+}
+
+a {
+    font-family: proxima-nova, sans-serif;
+    text-decoration: none;
+    color: #354721;
+}
+
+a:hover{
+    text-decoration: none;
+    color: #354721;
+}
+
+/* Button stylings */
+.button{
+   width: 100%;
+   padding: 0.3rem;
+   margin: 0.5rem 0;
+   text-align: center;
+   border: none;
+   background-color: #CCC38C;
+   text-transform: capitalize;
+   color: #656040;
+}
+
+.button:hover{
+    background-color: #656040;
+    color: #CCC38C;
+}

@@ -1,0 +1,135 @@
+#loadWrapper{
+    background-image: url('../images/spindrift.jpg');
+    height: 100vh;
+    width: 100vw;
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#loadContents{
+    width: 70vw;
+    height: auto;
+    animation: fade 2s ease;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+#frankalbieLoadingLogo{
+    width: 100%;
+    height: auto;
+    animation: grow 3s infinite linear;
+    animation-delay: 2.1s;
+}
+#welcomeTo{
+    align-self: flex-start;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 2rem;
+    margin-left: 5rem;
+
+}
+#loading{
+    display: flex;
+    flex-flow: row;
+    align-items: baseline;
+    align-self: flex-end;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 2rem;
+    margin-right: 5rem;
+
+}
+#loading p{
+    font-family: 'Abril Fatface', cursive;
+    font-size: 2rem;
+
+}
+#dot1{
+    animation: bounce 2s infinite linear;
+}
+
+#dot2{
+    animation: bounce 2s infinite linear;
+    animation-delay: .5s;
+}
+
+#dot3{
+    animation: bounce 2s infinite linear;
+    animation-delay: 1s;
+}
+
+@media screen and (max-width: 768px){
+    #welcomeTo{
+        font-size: 1rem;
+        margin-left: 1rem;
+
+    }
+    #loading{
+        font-size: 1.5rem;
+        margin-right: 1rem;
+
+    }
+
+    #loading p{
+        font-size: 1.5rem;
+    }
+}
+
+/*Making the jumping dot dot dot */
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0px);
+    }
+    25% {
+        transform: translateY(-10px);
+    }
+    40%{
+        transform: translateY(3px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+    
+}
+
+/*Animating the 'beating' logo */
+
+@keyframes grow {
+    0% {
+        transform: scale(100%, 100%);
+    }
+    25% {
+        transform: scale(101%, 101%);
+    }
+    50% {
+        transform: scale(102%, 102%);
+    }
+    100% {
+        transform: scale(100%, 100%);
+    }
+    
+}
+
+/*Animation to fade in  */
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: .5;
+    }
+    50% {
+        opacity: .7;
+    }
+    100% {
+        opacity: 1;
+    }
+    
+}
+

@@ -37,7 +37,7 @@ function AddToCartButton(){
     };
 
     return(
-        <button onClick={() => addToCart(currentProduct)} >Add To Cart</button>
+        <button onClick={() => addToCart(currentProduct)} id="btn.addToCart" className="button">add to cart</button>
     )
 }
 

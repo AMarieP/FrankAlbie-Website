@@ -1,0 +1,93 @@
+/* Footer Stylings for Desktop */
+
+footer{
+    width: 100vw;
+    margin-top: 20vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#logoFooter{
+    width: 100%;
+    background-image: url('../images/spindrift.jpg');
+    background-size: cover;
+    background-color: #f7dacc;
+}
+
+#footerLogoImage{
+    width: 40%;
+    height: auto;
+    margin-top: 10rem;
+    margin-bottom: .5rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#navigationFooter{
+    width: 100%;
+    padding: .7rem 0rem;
+    background-color: #CCC38b;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#navigationFooter a{
+    padding: 0rem 2rem;
+    color: #FEFADF;
+}
+
+#copyrightFooter{
+    width: 100%;
+    background-color: #f7dacc;
+    display: flex;
+    justify-content: center;
+}
+
+#copyrightFooter p{
+    padding: 0%;
+    margin: 0%;
+    color: #FEFADF;
+}
+
+/* Media Queries for Mobile and Tablet Devices */
+
+/*Mobile */
+@media screen and (max-width: 768px){
+    #logoFooter{
+        display: none;
+    }
+
+    #copyrightFooter{
+        background-image: url('../images/spindrift.jpg');
+        height: 30vh;
+        font-size: .5rem;
+        background-size: cover;
+    }
+
+    #copyrightFooter p{
+        padding: .5rem 0rem;
+    }
+
+    #navigationFooter{
+        background-color: #f7dacc;
+
+    }
+
+    #navigationFooter a{
+        background-color: #f7dacc;
+        padding: 0rem 0.5rem;
+        font-size: .7rem;
+    }
+    
+}
+
+/*Tablet */
+@media screen and (max-width: 992px){
+
+    
+}
