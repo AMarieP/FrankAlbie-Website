@@ -24,7 +24,7 @@ function AllProducts(){
         <>
         <div className="container" >
             <div id="productListingPage" >
-                <h1>Shop Frank Albie</h1>
+                <h1 id="headingAllProd" >Shop Frank Albie</h1>
                     <div id="products">
                         {allProductsData &&
                             allProductsData.map((product, index) => (

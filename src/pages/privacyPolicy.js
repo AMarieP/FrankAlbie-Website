@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import sanityClient from "../client";
 import { PortableText } from '@portabletext/react'
+import LoadingScreen from "../components/loadingScreen";
 
 //TO DO: Add Stylings
 
@@ -19,13 +20,13 @@ function PrivacyPolicy(){
         .catch(console.error);
     },);
 
-    if (!privacyPolicy) return <div>Loading...</div>; //if data is not loaded return a loading screen
+    if (!privacyPolicy) return <LoadingScreen />; //if data is not loaded return a loading screen
 
     return(
         <>
         <div className="container">
-            <h1>{privacyPolicy.title}</h1>
-            <PortableText value={privacyPolicy.paragraph}/>
+            <h1 id="privTitle" >{privacyPolicy.title}</h1>
+            <div id="privBody" ><PortableText value={privacyPolicy.paragraph}/></div>
         </div>
         </>
 

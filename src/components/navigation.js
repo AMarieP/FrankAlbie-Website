@@ -17,7 +17,7 @@ export default function NavigationBar(){
         
     //On hover change logo into different colour
     const [mouseHover, setMouseHover] = useState(false);
-    const [target, setTarget] = useState(null)
+    const [target, setTarget] = useState()
 
     const homepageImageSrc = mouseHover && target.id =="homepageImage" ? desktopLogoHover : desktopLogo;
     const navShop = mouseHover && target.id=='navShop' ? "navShopHoverLink" : '';

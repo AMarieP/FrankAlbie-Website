@@ -6,6 +6,9 @@
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 5;
 }
 
 #cart{
@@ -68,10 +71,10 @@
 
 #devicesNav{
     width: 100vw;
-    height: 10vh;
+    height: 15vh;
     display: none;
     grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
-    grid-template-rows: 0.2fr 0.5fr 0.5fr;
+    grid-template-rows: 0.2fr 1fr, 1fr 1fr;
     column-gap: 0.5rem;
     justify-items: center;
     align-items: start;
@@ -79,15 +82,15 @@
     position: fixed;
     padding: 0;
     margin: 0;
-    z-index: 1;
+    z-index: 5;
 }
 
 #backgroundNav{
     background-color: #F7DACC;
-    height: 10vh;
+    height: 15vh;
     width: 100vw;
     grid-column: 1 / span 5;
-    grid-row: 1 / span 2;
+    grid-row: 2 / span 3;
     z-index: -1;
 }
 
@@ -106,7 +109,7 @@
 
 #devNavHome{
     grid-column: 3 / span 1;
-    grid-row: 2 /span 2;
+    grid-row: 1 /span 2;
     width: 30vw;
 }
 
@@ -151,7 +154,7 @@ svg:active path {
     #devicesNav{
         display: grid;
         position: fixed;
-        top: 0;
+        bottom: 0;
         left: 0;
         right: 0;
     }
@@ -167,7 +170,7 @@ svg:active path {
     #devicesNav{
         display: grid;
         height: 15vh;
-        bottom: 0;
+        top: 0;
         grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
         grid-template-rows: 1fr 0.2fr 1fr 1fr;
  

@@ -1,0 +1,63 @@
+#contactPage{
+    display: grid;
+    grid-template-columns: 1fr 0.3fr 1fr 2fr 2fr 1fr;
+    padding-top: 5vh;
+}
+
+#contactHeading{
+    grid-column: 3 / span 2;
+    grid-row: 3 / span 1;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 3rem;
+
+}
+
+#contactText{
+    grid-column: 2 / span 4;
+    grid-row: 5 /span 3;
+    font-size: 1.6rem;
+}
+
+#contrastBackground{
+    height: 40vh;
+    width: 100vw;
+    filter: opacity(30%);
+    object-fit: cover;
+    grid-column: 1 / span 6;
+    grid-row: 4 / span 8;
+    z-index: -1;
+}
+
+#contactButtons{
+    grid-column: 3 / span 2;
+    grid-row: 8 / span 1;
+    
+}
+
+#contactButtons p{
+    margin: 0%;
+    font-size: 1rem;
+}
+
+#contactEmail{
+    font-family: 'Abril Fatface', cursive;
+    font-size: 1.5rem;
+
+}
+
+#contactEmail:hover{
+    color: #FEFADF;
+    background-color: #F7DACC;
+
+}
+
+#contactIg{
+    font-family: 'Abril Fatface', cursive;
+    font-size: 1.5rem;
+}
+
+#contactIg:hover{
+    color: #FEFADF;
+    background-color: #F7DACC;
+
+}

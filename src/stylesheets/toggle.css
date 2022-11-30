@@ -1,0 +1,33 @@
+  .upChev {
+    transform: rotate(-90deg);
+    width: 1.2rem;
+    margin-left: 0.3rem;
+    position: relative;
+    z-index: -1;
+  }
+
+  .downChev {
+    transform: rotate(90deg);
+    width: 1.2rem;
+    margin-left: 0.3rem;
+    position: relative;
+    z-index: -1;
+  }
+
+  .accordian {
+    width: 100%;
+  }
+
+  .accordian-header {
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: inherit;
+  }
+  .accordian-body {
+    font-size: 0.8rem;
+    padding: 1rem 0.5rem;
+    background-color: #fffceb;
+  }

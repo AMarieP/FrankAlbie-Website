@@ -4,7 +4,7 @@
 }
 
 #cartList{
-    margin: auto;
+    margin-left: 5rem;
     padding: 0%;
     width: 85vw;
 }
@@ -33,6 +33,7 @@
     margin: 1;
     height: 100%;
     width: 10vw;
+    overflow: hidden;
     background-color: white;
 }
 
@@ -75,4 +76,24 @@
     font-style: italic;
     font-size: 2rem;
     text-align: left;
+}
+
+/* Media Queries */
+/*Mobile */
+@media screen and (max-width: 767px){
+    .cartListing{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        height: 20vh;
+    }
+
+    
+}
+
+/*Tablet */
+@media screen and (min-width: 768px) and (max-width: 992px){
+
+
+    
 }

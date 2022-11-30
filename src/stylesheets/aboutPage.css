@@ -3,7 +3,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr 1fr 1fr 1fr;
     grid-template-rows: minmax(1px, 1fr);
     width: 100vw;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 #aboutHeading{
@@ -47,6 +47,7 @@
   grid-column: 8 / span 2;
   grid-row: 3 / span 7;
   object-fit: cover;
+  z-index: -1;
   transform: scaleX(-1);
 }
 
@@ -58,7 +59,16 @@
     padding: 0%;
     grid-column: 1 / span 10;
     grid-row: 9 /span 4;
-    z-index: -1;
+    z-index: -2;
+}
+
+#infloroBanner{
+    display: none;
+    background-image: url(../images/inflorescense.jpg);
+    object-fit: cover;
+    height: 10vh;
+    width: 100vw;
+    filter: opacity(50%);
 }
 
 #linkToSeeMore{
@@ -73,4 +83,139 @@
 
 .contactLink{
     color: #F7DACC;
+}
+
+/* Media Queries */
+/*Mobile */
+@media screen and (max-width: 767px){
+
+    #aboutPage{
+        display: grid;
+        grid-template-columns: 1fr 2fr 2fr 2fr 2fr 1fr;
+        grid-template-rows: minmax(1px, 1fr);
+    }
+
+    #infloroBanner{
+        display: block;
+        grid-column: 1 / span 6;
+        grid-row: 1 / span 3;
+    }
+    
+    #aboutHeading{
+        grid-column: 2 / span 4;
+        grid-row: 1 / span 2;
+        z-index: 1;
+    }
+    
+    #aboutContent{
+        grid-column: 2 / span 4;
+        grid-row: 5 / span 6;
+        text-align: justify;
+    }
+    
+    #halCircle{
+        grid-column: 2 / span 2;
+        grid-row: 17 / span 2;
+    
+    }
+    
+    #spinCircle{
+        grid-column: 2 / span 1;
+        grid-row: 11 / span 2;
+    }
+    
+    #portrait{
+      grid-column: 3 / span 4;
+      grid-row: 11 / span 7;
+    }
+    
+    #boxKhaki{
+        grid-column: 1 / span 10;
+        grid-row: 12 /span 4;
+        z-index: -2;
+    }
+    
+    #linkToSeeMore{
+        font-size: 1rem;
+        grid-column: 3 / span 3;
+        grid-row: 19 / span 2;
+        text-align: end;
+    }
+
+    .shopLink{
+        color: #CCC38C;
+    }
+    
+}
+
+/*Tablet */
+@media screen and (min-width: 768px) and (max-width: 992px){
+    
+    #aboutPage{
+        display: grid;
+        grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.2fr 0.5fr 0.5fr 0.5fr 0.5fr 1fr 0.5fr 0.5fr 2fr 1fr 0.5fr;
+        width: 100vw;
+        overflow: hidden;
+    }
+    
+    #aboutHeading{
+        grid-column: 2 / span 5;
+        grid-row: 3 / span 1;
+        font-family: 'Abril Fatface', cursive;
+    }
+    
+    #aboutContent{
+        grid-column: 2 / span 4;
+        grid-row: 4 / span 7;
+        text-align:left;
+    }
+    
+    #halCircle{
+        object-fit: cover;
+        height: 9rem;
+        width: 9rem;
+        grid-column: 3 / span 2;
+        grid-row: 9 / span 2;
+    
+    }
+    
+    #spinCircle{
+        object-fit: cover;
+        height: 7rem;
+        width: 7rem;
+        grid-column: 2 / span 1;
+        grid-row: 11 / span 3;
+    }
+    
+    #portrait{
+      grid-column: 7 / span 3;
+      grid-row: 3 / span 7;
+
+    }
+    
+    #boxKhaki{
+        background-color: #CCC38C;
+        width: 100vw;
+        height: 30vh;
+        margin: 0%;
+        padding: 0%;
+        grid-column: 1 / span 10;
+        grid-row: 10 /span 4;
+        z-index: -2;
+    }
+    
+    #infloroBanner{
+        display: block;
+        grid-column: 1 / span 6;
+        grid-row: 1 / span 3;
+        height: 15vh;
+    }
+    
+    #linkToSeeMore{
+        font-size: 1rem;
+        grid-column: 6 / span 4;
+        grid-row: 11;
+    }
+
+    
 }

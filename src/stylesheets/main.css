@@ -2,7 +2,8 @@ body{
     margin: 0%;
     background-color: #FEFADF;
     width: 100vw;
-    height: fit-content;
+    min-height: fit-content;
+    overflow-x: hidden;
 }
 
 #root{
@@ -11,11 +12,13 @@ body{
     height: max-content;
 }
 .container{
-    margin: 20vh 0 10vh 0;
+    margin: 20vh 0 5vh 0;
+    min-height: 100vh;
+    padding: 0;
 }
 
 h1{
-    font-family: proxima-nova, sans-serif;
+    font-family: 'Abril Fatface', cursive;
     font-weight: normal;
 }
 
@@ -56,4 +59,38 @@ a:hover{
 .button:hover{
     background-color: #656040;
     color: #CCC38C;
+}
+
+/* Styling fro Privacy Policy Page */
+#privTitle{
+    font-family: 'Abril Fatface', cursive;
+    margin: 0 10vw;
+
+}
+
+#privBody{
+    margin: 5vh 10vw;
+}
+
+/* Media Queries */
+/*Mobile */
+@media screen and (max-width: 767px){
+    .container{
+        margin: 0 0 5vh 0;
+
+    }
+
+    
+}
+
+/*Tablet */
+@media screen and (min-width: 768px) and (max-width: 992px){
+    .container{
+        margin: 10vh 0 5vh 0;
+
+    }
+
+
+
+    
 }

@@ -6,8 +6,10 @@
 }
 
 #image{
+    height: 100%;
     overflow: hidden;
-    flex: 2.3;
+    flex: 3;
+    background-color: antiquewhite;
 }
 
 #productPageImageCarousel{
@@ -15,14 +17,27 @@
     width: 100%;
 }
 
-/* Overwrite defaukt bootstrap */
+
+/* Overwrite default bootstrap */
 .carousel-control-next{
-    justify-content: flex-end;
+    width: auto !important;
 }
 
 .carousel-control-prev{
-    justify-content: flex-start;
+    width: auto !important;
 }
+
+.carousel-inner{
+    position: unset !important;
+}
+
+.carousel-inner > .carousel-item > img {
+    height: 100vh;
+    background-color: #F7DACC;
+    margin: auto;
+    z-index: 1;
+    position: relative;
+  }
 
 #content{
     flex: 1;
@@ -57,4 +72,34 @@
     background-color: #FEFADF;
     padding: 0.5rem 0.2rem;
     margin: 0;
+}
+
+/* Media Queries */
+/*Mobile */
+@media screen and (max-width: 767px){
+    #productPage {
+        flex-flow: column nowrap;
+        max-width: 100vw;
+        max-height: 120vh;
+    }
+    
+}
+
+/*Tablet */
+@media screen and (min-width: 768px) and (max-width: 992px){
+    #productPage {
+        margin-top: 12vh;
+        flex-flow: column nowrap;
+        max-width: 100vw;
+        max-height: 100vh;
+    }
+    #image{
+        height: auto;
+        width: 100vw;
+        object-fit: contain;
+        background-color: antiquewhite;
+    }
+
+
+    
 }

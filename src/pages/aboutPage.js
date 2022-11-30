@@ -2,7 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import sanityClient from "../client";
 import {PortableText} from '@portabletext/react'
+import LoadingScreen from "../components/loadingScreen";
+import { Link } from "react-router-dom";
+
 import "../stylesheets/aboutPage.css"
+
+import ginaPortrait from "../images/ginaPortrait.jpg"
+import halcyon from '../images/halcyon.jpg'
+import spindrift from '../images/spindrift.jpg'
+import inflore from '../images/inflorescense.jpg'
 
 
 function AboutPage(){
@@ -12,7 +20,7 @@ function AboutPage(){
     useEffect(()=>{
         sanityClient
         .fetch(
-            `*[_type == 'content' && title == "aboutme"]{
+            `*[_type == 'content' && title == "About Frankalbie"]{
                 title, paragraph
             }`
         )
@@ -20,21 +28,22 @@ function AboutPage(){
         .catch(console.error);
     },);
 
-    if (!aboutContent) return <div>Loading...</div>; //if data is not loaded return a loading screen
+    if (!aboutContent) return <LoadingScreen />; //if data is not loaded return a loading screen
 
     return(
         <>
         <div className="container">
+            <div id="infloroBanner"></div>
             <div id="aboutPage">
                 <h1 id="aboutHeading" >{aboutContent.title}</h1>
-                <p id="aboutContent" >
+                <div id="aboutContent" >
                     <PortableText value={aboutContent.paragraph}/>
-                    </p>
-                <img id="portrait" src="{../images/my about photo eek.JPG}"/>
-                <img className="circle" id="halCircle" src="../images/"/>
-                <img className="circle" id="spinCircle" src="../Components/assets/spindrift.jpg"/>
+                    </div>
+                <img id="portrait" src={ginaPortrait}/>
+                <img className="circle" id="halCircle" src={halcyon}/>
+                <img className="circle" id="spinCircle" src={spindrift}/>
                 <div id="boxKhaki"></div>
-                <p id="linkToSeeMore">wanna see more? <a href="#" className="shopLink">SHOP</a> here or <a href="#" className="contactLink">CONTACT US</a></p>
+                <p id="linkToSeeMore">wanna see more? <Link to={'/shop'} className="shopLink"> SHOP </Link>  here or  <Link to={'/contact'} className="contactLink"> CONTACT US </Link></p>
             </div>
         </div>
         </>

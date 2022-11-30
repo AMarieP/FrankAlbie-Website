@@ -6,6 +6,17 @@ import { Link } from 'react-router-dom'
 export default function Cart(){
     const [cartContents, setCart] = useContext(CartContext);
     console.log(localStorage.getItem('cartContents'))
+    
+    //mail funtion TBD
+    function sendMail() {
+        var link = "mailto:me@example.com"
+                 + "?cc=myCCaddress@example.com"
+                 + "&subject=" + encodeURIComponent("This is my subject")
+                 + "&body=" + encodeURIComponent(document.getElementById('myText').value)
+        ;
+        
+        window.location.href = link;
+    }
 
     //Total of cart
     function cartCostTotal(){
@@ -24,7 +35,7 @@ export default function Cart(){
     function removeFromCart(productId){
         setCart(
             cartContents.filter((t) => t.id ==! productId)
-            )
+            );
     };
 
 //Increments or decrements product
@@ -49,7 +60,6 @@ export default function Cart(){
     //cart listings element
     let cartListings = <>{cartContents &&
         cartContents.map((product, index) => (<>
-        <Link to={'/' + product.slug.current} key={index}>
             <span key={index * product.price}>
                 <li className="listing">
                     <div className="cartListing">
@@ -62,12 +72,11 @@ export default function Cart(){
                                 <p>${product.price}</p>
                             </div>
                         </div>
-                        <button class="cartButtonDelete">X</button>
+                        <button class="cartButtonDelete" onClick={() => removeFromCart(product.id)}>X</button>
                     </div>
                     <hr class="cartHr"/>
                 </li>
             </span>
-        </Link> 
         </>
         ))}</>
 
@@ -87,7 +96,7 @@ export default function Cart(){
             <hr className="cartHr"/>
                 {cartList}
             <p id="cartTotal">Total: ${total}</p>
-            <button className="button">Enquire Now</button>
+            <button className="button" >Enquire Now</button>
         </ul>
 
         </>

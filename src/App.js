@@ -4,14 +4,17 @@ import AllProducts from "./pages/allProducts";
 import IndividualProduct from './pages/individualProduct';
 import CartPage from "./pages/cartPage";
 import AboutPage from "./pages/aboutPage";
+import ContactPage from "./pages/contactUs";
 import PrivacyPolicy from "./pages/privacyPolicy";
 import LoadingScreen from "./components/loadingScreen";
 
 import NavigationBar from "./components/navigation";
 import Footer from "./components/footer";
 
+import ToggleMenu from "./components/toggle";
 import { CartProvider } from './context/cart/cartContext';
 import { ActiveProductContext } from './context/activeProduct/activeProductContext';
+
 
 // import 'bootstrap/dist/css/bootstrap.css'
 // import 'bootstrap/dist/js/bootstrap.bundle'
@@ -32,7 +35,10 @@ function App(){
         <Route element={<CartPage/>} path="/cart" />
         <Route element={<AboutPage/>} path="/about" />
         <Route element={<PrivacyPolicy/>} path="/privacy" />
+        <Route element={<ContactPage/>} path="/contact" />
         <Route element={<LoadingScreen/>} path="/load" />
+        <Route element={<ToggleMenu/>} path="/toggle" />
+
     </Routes>
     <Footer></Footer>
     </BrowserRouter>
